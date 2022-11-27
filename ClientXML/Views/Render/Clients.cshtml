@@ -1,0 +1,60 @@
+﻿@model List<ClientXML.Models.Client>;
+@{
+    Layout = "../Layouts/Main.cshtml";
+    ViewBag.Title = "Таблица";
+}
+
+
+<div class="row" style="overflow: auto; height: calc(100% - 64px);">
+    <div class="col s12">
+        <table>
+            <thead>
+                <tr>
+                    <th>CardCode</th>
+                    <th>StartDate</th>
+                    <th>FinishDate</th>
+                    <th>LastName</th>
+                    <th>FirstName</th>
+                    <th>SurName</th>
+                    <th>Gender</th>
+                    <th>BirthDay</th>
+                    <th>PhoneHome</th>
+                    <th>PhoneMobil</th>
+                    <th>Email</th>
+                    <th>City</th>
+                    <th>Street</th>
+                    <th>House</th>
+                    <th>Apart</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var client in Model)
+                {
+                    <tr>
+                        <td>@client.CardCode</td>
+                        <td>@client.StartDate</td>
+                        <td>@client.FinishDate</td>
+                        <td>@client.LastName</td>
+                        <td>@client.FirstName</td>
+                        <td>@client.SurName</td>
+                        <td>@client.Gender</td>
+                        <td>@client.BirthDay</td>
+                        <td>@client.PhoneHome</td>
+                        <td>@client.PhoneMobil</td>
+                        <td>@client.Email</td>
+                        <td>@client.City</td>
+                        <td>@client.Street</td>
+                        <td>@client.House</td>
+                        <td>@client.Apartment</td>
+                        <td>
+                            <a href="/edit/@client.Id" class="waves-effect waves-light btn">
+                                Править
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

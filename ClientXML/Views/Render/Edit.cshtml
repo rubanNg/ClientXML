@@ -1,0 +1,100 @@
+﻿@model ClientXML.Models.Client;
+@using ClientXML.Enums;
+@{
+    Layout = "../Layouts/Main.cshtml";
+}
+
+<div class="row">
+    <p>Клиент: @Model.CardCode</p>
+
+    <form id="clientForm">
+
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <input type="hidden" name="CardCode" value="@Model.CardCode" />
+
+        <div class="col s6">
+            <div class="input-field col s12">
+                <strong>FirstName:</strong>
+                <input name="FirstName" placeholder="FirstName" value="@Model.FirstName" type="text">
+            </div>
+
+            <div class="input-field col s12">
+                <strong>LastName:</strong>
+                <input name="LastName" placeholder="LastName" value="@Model.LastName" type="text">
+            </div>
+
+            <div class="input-field col s12">
+                <strong>SurName:</strong>
+                <input name="SurName" placeholder="SurName" value="@Model.SurName" type="text">
+            </div>
+
+            <div class="input-field col s12">
+                <strong>StartDate:</strong>
+                <input name="StartDate" placeholder="StartDate" value="@Model.StartDate" type="text">
+            </div>
+
+            <div class="input-field col s12">
+                <strong>FinishDate:</strong>
+                <input name="FinishDate" placeholder="FinishDate" value="@Model.FinishDate" type="text">
+            </div>
+
+            <div class="input-field col s12">
+                <strong>Gender:</strong>
+                <select class="browser-default" name="Gender" value="@Model.Gender">
+                    <option value="М" @(Model.Gender == "M" ? "selected" : "")>М</option>
+                    <option value="Ж" @(Model.Gender == "Ж" ? "selected" : "")>Ж</option>
+                </select>
+            </div>
+
+            <div class="input-field col s12">
+                <strong>BirthDay:</strong>
+                <input name="BirthDay" placeholder="BirthDay" value="@Model.BirthDay" type="text">
+            </div>
+        </div>
+
+        <div class="col s6">
+
+            <div class="input-field col s12">
+                <strong>PhoneHome:</strong>
+                <input name="PhoneHome" placeholder="PhoneHome" value="@Model.PhoneHome" type="text">
+            </div>
+
+            <div class="input-field col s12">
+                <strong>PhoneMobil:</strong>
+                <input name="PhoneMobil" placeholder="PhoneMobil" value="@Model.PhoneMobil" type="text">
+            </div>
+
+            <div class="input-field col s12">
+                <strong>Email:</strong>
+                <input name="Email" placeholder="Email" value="@Model.Email" type="text">
+            </div>
+
+            <div class="input-field col s12">
+                <strong>City:</strong>
+                <input name="City" placeholder="City" value="@Model.City" type="text">
+            </div>
+
+            <div class="input-field col s12">
+                <strong>Street:</strong>
+                <input name="Street" placeholder="Street" value="@Model.Street" type="text">
+            </div>
+
+            <div class="input-field col s12">
+                <strong>House:</strong>
+                <input name="House" placeholder="House" value="@Model.House" type="text">
+            </div>
+
+            <div class="input-field col s12">
+                <strong>Apartment:</strong>
+                <input name="Apartment" placeholder="Apartment" value="@Model.Apartment" type="text">
+            </div>
+        </div>
+
+        <div class="col s12">
+            <button id="sendForm" type="submit" class="waves-effect waves-light btn">Отправить</button>
+        </div>
+    </form>
+
+</div>
+
+<script src="~/js/edit-page.js"></script>

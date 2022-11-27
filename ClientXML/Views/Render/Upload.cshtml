@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "../Layouts/Main.cshtml";
+    ViewBag.Title = "Загрузка";
+}
+
+<div style="padding-top: 200px; display: flex; align-items: center; justify-content: center; flex-direction: column" class="wrapper-content">
+    <input type="file" id="inputFile" style="display: none" />
+
+    <div class="col s12 content">
+        <div class="row">
+            <div class="col s12">
+                <div class="row">
+                    <a id="uploadFile" class="waves-effect waves-light btn">Выбрать файл</a>
+                </div>
+
+                <div class="row">
+                    <p>Если в базе будут совпадения по полю <strong>CARDCODE</strong></p>
+                    <p>то запись в базе будет обновлена данными из файла. </p>
+                    <p>Иначе будет создана новая запись</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <h3 id="fileInfo"></h3>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="loading">
+        <h2>Loading...</h2>
+    </div>
+</div>
+
+<link rel="stylesheet" href="~/css/upload-page.css">
+<script src="~/js/upload-page.js"></script>
